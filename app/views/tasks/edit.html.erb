@@ -1,0 +1,20 @@
+<h1>Edit <%= @task.title %> </h1>
+
+<%= form_for @task do |f| %>
+    <%= f.label :title  %>
+    <%= f.text_field :title %>
+    <%= f.label :details  %>
+    <%= f.text_field :details %>
+    <%= f.label :completed, "Task is done" %>
+    <%= f.check_box :completed %>
+
+    <%= f.submit %>
+<% end %>
+
+ <%= link_to tasks_path do %>
+    <i class="fas fa-home"></i>
+  <% end %>
+
+<%= link_to task_path(@task.id), method: :delete, data: { confirm: 'Do you want to delete?' } do %>
+    <i class="fas fa-trash"></i>
+  <% end %>

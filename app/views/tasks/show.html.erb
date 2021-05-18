@@ -1,0 +1,14 @@
+<h1> <%= @task.title %>  </h1>
+<p> <%= @task.details %> </p>
+
+<%= link_to tasks_path do %>
+    <i class="fas fa-home"></i>
+<% end %>
+
+<%= link_to edit_task_path do  %>
+  <i class="fas fa-edit"></i>
+<% end %>
+
+<%= link_to task_path(@task.id), method: :delete, data: { confirm: 'Do you want to delete?' } do %>
+  <i class="fas fa-trash"></i>
+<% end %>

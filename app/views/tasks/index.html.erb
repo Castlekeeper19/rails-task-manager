@@ -1,0 +1,12 @@
+<h1> ALL MY TASKS </h1>
+
+<h2 class = "my-3">Create a new Task
+<%= link_to new_task_path do %>
+  <i class="fas fa-plus"></i>
+<% end %> </h2>
+
+<% @tasks.each do |task| %>
+
+  <h3><em><%= link_to task.title, task_path(task) %></em></h3>
+  <p> <%= task.details %>  </p>
+<% end %>
